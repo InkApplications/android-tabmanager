@@ -5,10 +5,11 @@ android {
     buildToolsVersion "19.0.3"
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 19
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+
+        versionCode VERSION_CODE
+        versionName VERSION
     }
 
     compileOptions {
@@ -24,6 +25,6 @@ android {
 }
 
 dependencies {
+    compile project(':tabmanager')
     compile 'com.android.support:appcompat-v7:19.0.1'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
