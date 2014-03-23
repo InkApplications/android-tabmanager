@@ -5,7 +5,7 @@ android {
     buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion MIN_SDK_VERSION
+        minSdkVersion MAIN_MIN_VERSION
         targetSdkVersion TARGET_SDK_VERSION
 
         versionCode VERSION_CODE
@@ -16,15 +16,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
-    buildTypes {
-        release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-        }
-    }
 }
 
 dependencies {
     compile project(':tabmanager')
-    compile 'com.android.support:appcompat-v7:19.0.1'
 }
