@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.inkapplications.tabmanager.SupportTabManagerTest" tests="3" failures="2" errors="0" time="0.018" timestamp="2014-03-23T03:08:35" hostname="localhost">
+  <properties device="Nexus 4 - 4.4.2 - API 19 - 768x1280 - 4.4.2" flavor="" project="tabmanager" />
+  <testcase name="testAndroidTestCaseSetupProperly" classname="com.inkapplications.tabmanager.SupportTabManagerTest" time="0.0" />
+  <testcase name="testShouldCreateTabs" classname="com.inkapplications.tabmanager.SupportTabManagerTest" time="0.002">
+    <failure>java.lang.NullPointerException
+at android.content.ContextWrapper.getApplicationContext(ContextWrapper.java:109)
+at com.inkapplications.tabmanager.TabListener.&lt;init&gt;(TabListener.java:39)
+at com.inkapplications.tabmanager.SupportTabManagerTest.testShouldCreateTabs(SupportTabManagerTest.java:43)
+at java.lang.reflect.Method.invokeNative(Native Method)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:191)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:176)
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:554)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1701)
+</failure>
+  </testcase>
+  <testcase name="testShouldNavigateToFragment" classname="com.inkapplications.tabmanager.SupportTabManagerTest" time="0.0">
+    <failure>java.lang.VerifyError: org/mockito/cglib/core/ReflectUtils
+at org.mockito.cglib.core.KeyFactory$Generator.generateClass(KeyFactory.java:167)
+at org.mockito.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:25)
+at org.mockito.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:217)
+at org.mockito.cglib.core.KeyFactory$Generator.create(KeyFactory.java:145)
+at org.mockito.cglib.core.KeyFactory.create(KeyFactory.java:117)
+at org.mockito.cglib.core.KeyFactory.create(KeyFactory.java:109)
+at org.mockito.cglib.core.KeyFactory.create(KeyFactory.java:105)
+at org.mockito.cglib.proxy.Enhancer.&lt;clinit&gt;(Enhancer.java:70)
+at org.mockito.internal.creation.jmock.ClassImposterizer.createProxyClass(ClassImposterizer.java:85)
+at org.mockito.internal.creation.jmock.ClassImposterizer.imposterise(ClassImposterizer.java:62)
+at org.mockito.internal.creation.jmock.ClassImposterizer.imposterise(ClassImposterizer.java:56)
+at org.mockito.internal.creation.CglibMockMaker.createMock(CglibMockMaker.java:23)
+at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:26)
+at org.mockito.internal.MockitoCore.mock(MockitoCore.java:51)
+at org.mockito.Mockito.mock(Mockito.java:1243)
+at org.mockito.Mockito.mock(Mockito.java:1120)
+at com.inkapplications.tabmanager.SupportTabManagerTest.testShouldNavigateToFragment(SupportTabManagerTest.java:82)
+at java.lang.reflect.Method.invokeNative(Native Method)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:191)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:176)
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:554)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1701)
+</failure>
+  </testcase>
+</testsuite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="debug" >
+        <source path="/home/areitz/Projects/android-tabmanager/tabmanager/build/bundles/debug/res" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/home/areitz/Projects/android-tabmanager/tabmanager/src/androidTest/res" />
+        <source path="/home/areitz/Projects/android-tabmanager/tabmanager/build/res/rs/test/debug" />
+        <source path="/home/areitz/Projects/android-tabmanager/tabmanager/build/res/generated/test/debug" />
+    </dataSet>
+
+</merger>

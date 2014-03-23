@@ -1,0 +1,10 @@
+<!-- From: file:/tmp/manifestMerge5189865516276444169.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.inkapplications.tabmanager.test">
+
+    <uses-sdk android:minSdkVersion="13" android:targetSdkVersion="19"/>
+
+    <application>
+        <uses-library android:name="android.test.runner"/>
+    </application>
+
+    <instrumentation android:functionalTest="false" android:handleProfiling="false" android:label="Tests for com.inkapplications.tabmanager.test" android:name="android.test.InstrumentationTestRunner" android:targetPackage="com.inkapplications.tabmanager.test"/>
+</manifest>
