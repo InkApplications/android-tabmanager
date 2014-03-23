@@ -5,8 +5,8 @@ android {
     buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 13
-        targetSdkVersion TARGET_SDK_VERSION
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion 13
 
         versionCode VERSION_CODE
         versionName VERSION
@@ -19,4 +19,5 @@ android {
 }
 
 dependencies {
+    compile 'com.android.support:appcompat-v7:+'
 }

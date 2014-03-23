@@ -1,12 +1,10 @@
-package com.inkapplications.tabmanager;
+package com.inkapplications.tabmanager.support;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 
-import static com.inkapplications.tabmanager.Preconditions.checkNotNull;
-
 /** Class containing all information needed to construct a tab */
-public class SupportTabContent {
+public class TabContent {
 
     private Integer mTabIcon;
     private String mTabTitle;
@@ -19,7 +17,7 @@ public class SupportTabContent {
      * @param tabTitle           title of the tab
      * @param tabContentFragment fragment that is displayed when a fragment is on screen
      */
-    public SupportTabContent(String tabTitle, Class<? extends Fragment> tabContentFragment) {
+    public TabContent(String tabTitle, Class<? extends Fragment> tabContentFragment) {
         this(tabTitle, tabContentFragment, null);
     }
 
@@ -31,12 +29,12 @@ public class SupportTabContent {
      * @param tabIcon            resource id of the icon to draw.  May be null if you do not want an
      *                           icon
      */
-    public SupportTabContent(
+    public TabContent(
             String tabTitle,
             Class<? extends Fragment> tabContentFragment,
             Integer tabIcon
     ) {
-        this(tabTitle, checkNotNull(tabContentFragment), tabIcon, null);
+        this(tabTitle, Preconditions.checkNotNull(tabContentFragment), tabIcon, null);
     }
 
     /**
@@ -46,12 +44,12 @@ public class SupportTabContent {
      * @param tabIcon     resource id of the icon to draw.  May be null if you do not want an icon
      * @param tabListener create a custom tab listener
      */
-    public SupportTabContent(
+    public TabContent(
             String tabTitle,
             Integer tabIcon,
             ActionBar.TabListener tabListener
     ) {
-        this(tabTitle, null, tabIcon, checkNotNull(tabListener));
+        this(tabTitle, null, tabIcon, Preconditions.checkNotNull(tabListener));
     }
 
     /**
@@ -65,13 +63,13 @@ public class SupportTabContent {
      *                           icon
      * @param tabListener        create a custom tab listener
      */
-    private SupportTabContent(
+    private TabContent(
             String tabTitle,
             Class<? extends Fragment> tabContentFragment,
             Integer tabIcon,
             ActionBar.TabListener tabListener
     ) {
-        mTabTitle = checkNotNull(tabTitle);
+        mTabTitle = Preconditions.checkNotNull(tabTitle);
         mTabContentFragment = tabContentFragment;
         mTabIcon = tabIcon;
         mTabListener = tabListener;
@@ -84,7 +82,7 @@ public class SupportTabContent {
 
     /** Set the title of this tab */
     public void setTabTitle(String tabTitle) {
-        mTabTitle = checkNotNull(tabTitle);
+        mTabTitle = Preconditions.checkNotNull(tabTitle);
     }
 
     /** Get the fragment that this tab will be displaying */
@@ -94,7 +92,7 @@ public class SupportTabContent {
 
     /** Sets the fragment that this tab will be displaying */
     public void setTabContentFragment(Class<? extends Fragment> tabContentFragment) {
-        mTabContentFragment = checkNotNull(tabContentFragment);
+        mTabContentFragment = Preconditions.checkNotNull(tabContentFragment);
     }
 
     /**
@@ -118,7 +116,7 @@ public class SupportTabContent {
         return mTabListener;
     }
 
-    public void setTabListener(SupportTabListener supportTabListener) {
+    public void setTabListener(TabListener supportTabListener) {
         mTabListener = supportTabListener;
     }
 }

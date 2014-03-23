@@ -1,56 +1,54 @@
-package com.inkapplications.tabmanager;
+package com.inkapplications.tabmanager.support;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 
-import static com.inkapplications.tabmanager.Preconditions.checkNotNull;
-
 /**  Class for simplifying the use of actionbar tabs */
-public class SupportTabManager {
+public class TabManager {
 
     private final ActionBarActivity mActivity;
     private int mResourceId = android.R.id.content;
 
     /**
-     * Creates the SupportTabManager that will use {@link android.R.id#content} as the id to attach to
+     * Creates the TabManager that will use {@link android.R.id#content} as the id to attach to
      *
      * @param activity current activity to attach the tabs to
      */
-    public SupportTabManager(ActionBarActivity activity) {
-        mActivity = checkNotNull(activity);
+    public TabManager(ActionBarActivity activity) {
+        mActivity = Preconditions.checkNotNull(activity);
     }
 
     /**
-     * Creates the SupportTabManager
+     * Creates the TabManager
      *
      * @param activity   current activity to attach the tabs to
      * @param resourceId resource id the tab content should be attached too, for example
      *                   android.R.id.content to attach to the entire available content area, or
      *                   the main layout of a fragment.
      */
-    public SupportTabManager(ActionBarActivity activity, int resourceId) {
-        mActivity = checkNotNull(activity);
+    public TabManager(ActionBarActivity activity, int resourceId) {
+        mActivity = Preconditions.checkNotNull(activity);
         mResourceId = resourceId;
     }
 
     /**
      * Creates the new tabs on the activity
      *
-     * @param supportTabContents List containing info to construct all tabs
+     * @param tabContents List containing info to construct all tabs
      */
-    public void create(SupportTabContent... supportTabContents) {
-        checkNotNull(supportTabContents);
+    public void create(TabContent... tabContents) {
+        Preconditions.checkNotNull(tabContents);
 
-        ActionBar actionBar = checkNotNull(mActivity.getSupportActionBar());
+        ActionBar actionBar = Preconditions.checkNotNull(mActivity.getSupportActionBar());
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.removeAllTabs();
 
-        for (SupportTabContent supportTabContent : supportTabContents) {
-            Class<? extends Fragment> fragmentClass = supportTabContent.getTabContentFragment();
-            ActionBar.TabListener tabListener = supportTabContent.getTabListener();
+        for (TabContent tabContent : tabContents) {
+            Class<? extends Fragment> fragmentClass = tabContent.getTabContentFragment();
+            ActionBar.TabListener tabListener = tabContent.getTabListener();
             if (tabListener == null) {
-                tabListener = new SupportTabListener(
+                tabListener = new TabListener(
                         mActivity,
                         fragmentClass.getName(),
                         fragmentClass,
@@ -60,13 +58,13 @@ public class SupportTabManager {
 
             ActionBar.Tab tab = actionBar.newTab()
                     .setText(
-                            supportTabContent.getTabTitle()
+                            tabContent.getTabTitle()
                     )
                     .setTabListener(
                             tabListener
                     );
 
-            Integer tabIcon = supportTabContent.getTabIcon();
+            Integer tabIcon = tabContent.getTabIcon();
             if (tabIcon != null) {
                 tab.setIcon(tabIcon);
             }

@@ -1,1 +1,1 @@
-include ':tabmanager-sample', ':tabmanager'
+include ':tabmanager-sample', ':tabmanager', ':tabmanager-support'
