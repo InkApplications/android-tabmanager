@@ -18,7 +18,7 @@ public class TabListener implements ActionBar.TabListener {
     private final int mResourceId;
 
     /**
-     * Constructs a new TabListner
+     * Constructs a new TabListener
      *
      * @param context    context used to instantiate the enclosing fragment
      * @param tag        identifying tag of the fragment
