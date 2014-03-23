@@ -1,6 +1,8 @@
 ext {
     MIN_SDK_VERSION = 9
     TARGET_SDK_VERSION = 19
+    COMPILE_SDK_VERSION = 19
+    BUILD_TOOLS_VERSION = "19.0.3"
     GROUP = hasProperty("group") ? getProperty("group") : "com.inkapplications"
     VERSION = '1.0.0'
     VERSION_CODE = 1
