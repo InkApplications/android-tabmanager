@@ -1,2 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.inkapplications.tabmanager.support"/>
+          package="com.inkapplications.tabmanager.support">
+
+    <application/>
+</manifest>

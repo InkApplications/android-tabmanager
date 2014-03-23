@@ -1,7 +1,10 @@
 package com.inkapplications.tabmanager.sample;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,12 +35,8 @@ public class MainActivity extends Activity {
                 android.R.drawable.ic_menu_add
         );
 
-        TabListener tabListener3 = new TabListener(
-                this,
-                "testTag",
-                ExampleFragment3.class,
-                android.R.id.content
-        );
+        ActionBar.TabListener tabListener3 = new CustomTabListener(getString(R.string.fragment_three));
+
         TabContent tabContent3 = new TabContent(
                 getString(R.string.tab_three),
                 android.R.drawable.ic_btn_speak_now,
@@ -78,6 +77,15 @@ public class MainActivity extends Activity {
     }
 
     public static final class ExampleFragment3 extends Fragment {
+
+        private String text;
+
+        public static ExampleFragment3 newInstance(String text) {
+            ExampleFragment3 fragment = new ExampleFragment3();
+            fragment.text = text;
+            return fragment;
+        }
+
         @Override
         @SuppressWarnings("ConstantConditions")
         public View onCreateView(
@@ -87,8 +95,40 @@ public class MainActivity extends Activity {
         ) {
             View view = inflater.inflate(R.layout.fragment_example, container, false);
             TextView textView = (TextView) view.findViewById(R.id.example_textview);
-            textView.setText(getString(R.string.fragment_three));
+            textView.setText(text);
             return view;
+        }
+    }
+
+    static final class CustomTabListener implements ActionBar.TabListener {
+        private final String fragmentContent;
+        private Fragment fragment;
+
+        public CustomTabListener(String fragmentContent) {
+            this.fragmentContent = fragmentContent;
+        }
+
+        @Override public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+            // Check if the fragment is already initialized
+            if (fragment == null) {
+                // it's not instantiated and add to the activity
+                fragment = ExampleFragment3.newInstance(fragmentContent);
+                ft.replace(android.R.id.content, fragment, "ExampleTag");
+            } else {
+                // Already exists attach it
+                ft.attach(fragment);
+            }
+        }
+
+        @Override public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+            if (fragment != null) {
+                // Detach the fragment, b/c another is being attached
+                ft.detach(fragment);
+            }
+        }
+
+        @Override public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+
         }
     }
 }

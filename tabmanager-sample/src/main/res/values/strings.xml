@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">android-tabmanager</string>
+    <string name="app_name">TabManager Sample</string>
     <string name="tab1">Tab1</string>
     <string name="tab2">Tab2</string>
     <string name="tab_three">Tab3</string>

@@ -37,7 +37,7 @@ public class TabListener implements ActionBar.TabListener {
         mResourceId = resourceId;
     }
 
-    /** {@inheritDoc} * */
+    /** {@inheritDoc} */
     @Override public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
         // Check if the fragment is already initialized
         if (mFragment == null) {
@@ -50,7 +50,7 @@ public class TabListener implements ActionBar.TabListener {
         }
     }
 
-    /** {@inheritDoc} * */
+    /** {@inheritDoc} */
     @Override public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
         if (mFragment != null) {
             // Detach the fragment, b/c another is being attached
@@ -58,7 +58,7 @@ public class TabListener implements ActionBar.TabListener {
         }
     }
 
-    /** {@inheritDoc} * */
+    /** {@inheritDoc} */
     @Override public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
         // User selected the tab that is already selected
         // Do nothing
