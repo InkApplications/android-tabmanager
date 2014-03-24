@@ -59,7 +59,7 @@ public class TabContent {
 
     /**
      * Constructor - Private since everything else you would need can be accomplished in the other
-     * constructors and they all just route here.  TabListener and FragmentListener can not both be
+     * constructors and they all just route here.  DefaultTabListener and FragmentListener can not both be
      * null, other constructors check for this
      *
      * @param tabTitle           title of the tab
@@ -108,7 +108,7 @@ public class TabContent {
         return mTabListener;
     }
 
-    public void setTabListener(TabListener tabListener) {
-        mTabListener = tabListener;
+    public void setTabListener(DefaultTabListener defaultTabListener) {
+        mTabListener = defaultTabListener;
     }
 }

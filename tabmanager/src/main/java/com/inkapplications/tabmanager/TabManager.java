@@ -53,7 +53,7 @@ public class TabManager {
             Class<? extends Fragment> fragmentClass = tabContent.getTabContentFragment();
             ActionBar.TabListener tabListener = tabContent.getTabListener();
             if (tabListener == null) {
-                tabListener = new TabListener(
+                tabListener = new DefaultTabListener(
                         mActivity,
                         fragmentClass.getName(),
                         fragmentClass,
