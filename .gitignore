@@ -28,5 +28,6 @@ proguard/
 *.iws
 .idea/
 
-# Other
+# gradle
 gradle.properties
+build/
