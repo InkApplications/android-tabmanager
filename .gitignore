@@ -31,3 +31,4 @@ proguard/
 # gradle
 gradle.properties
 build/
+.gradle/
