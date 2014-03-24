@@ -9,7 +9,7 @@ public class CustomTabListener1 extends SimpleTabListener {
     private final String fragmentContent;
 
     public CustomTabListener1(String fragmentContent) {
-        super(CustomTabListener1.class.getCanonicalName());
+        super("ExampleTag");
         this.fragmentContent = fragmentContent;
     }
 

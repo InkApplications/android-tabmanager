@@ -18,14 +18,15 @@ public class MainActivity extends Activity {
 
         TabContent tabContent1 = new TabContent(
                 getString(R.string.tab1),
-                ExampleFragment1.class
+                ExampleFragment1.class,
+                android.R.drawable.ic_menu_add
         );
 
         ActionBar.TabListener tabListener2 = new CustomTabListener1(getString(R.string.fragment_two));
         TabContent tabContent2 = new TabContent(
                 getString(R.string.tab2),
-                ExampleFragment2.class,
-                android.R.drawable.ic_menu_add
+                android.R.drawable.ic_menu_add,
+                tabListener2
         );
 
         ActionBar.TabListener tabListener3 = new CustomTabListener2(getString(R.string.fragment_three));
