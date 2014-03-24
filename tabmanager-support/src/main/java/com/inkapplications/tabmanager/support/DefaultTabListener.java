@@ -1,9 +1,9 @@
-package com.inkapplications.tabmanager;
+package com.inkapplications.tabmanager.support;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 
-import static com.inkapplications.tabmanager.Preconditions.checkNotNull;
+import static com.inkapplications.tabmanager.support.Preconditions.checkNotNull;
 
 /**
  * Listener for when a tab is pressed.

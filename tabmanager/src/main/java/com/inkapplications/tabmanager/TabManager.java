@@ -1,19 +1,16 @@
 package com.inkapplications.tabmanager;
 
-import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
-import android.os.Build;
 
 import static com.inkapplications.tabmanager.Preconditions.checkNotNull;
 
 /** Class for simplifying the use of actionbar tabs */
-@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class TabManager {
 
-    private final Activity mActivity;
-    private int mResourceId = android.R.id.content;
+    private final Activity activity;
+    private int resourceId = android.R.id.content;
 
     /**
      * Creates the TabManager that will use {@link android.R.id#content} as the id to attach to
@@ -21,7 +18,7 @@ public class TabManager {
      * @param activity current activity to attach the tabs to
      */
     public TabManager(Activity activity) {
-        mActivity = checkNotNull(activity);
+        this.activity = checkNotNull(activity);
     }
 
     /**
@@ -33,8 +30,8 @@ public class TabManager {
      *                   the main layout of a fragment.
      */
     public TabManager(Activity activity, int resourceId) {
-        mActivity = checkNotNull(activity);
-        mResourceId = resourceId;
+        this.activity = checkNotNull(activity);
+        this.resourceId = resourceId;
     }
 
     /**
@@ -45,7 +42,7 @@ public class TabManager {
     public void create(TabContent... tabContents) {
         checkNotNull(tabContents);
 
-        ActionBar actionBar = checkNotNull(mActivity.getActionBar());
+        ActionBar actionBar = checkNotNull(activity.getActionBar());
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.removeAllTabs();
 
@@ -54,10 +51,10 @@ public class TabManager {
             ActionBar.TabListener tabListener = tabContent.getTabListener();
             if (tabListener == null) {
                 tabListener = new DefaultTabListener(
-                        mActivity,
+                        activity,
                         fragmentClass.getName(),
                         fragmentClass,
-                        mResourceId
+                        resourceId
                 );
             }
 
@@ -82,7 +79,7 @@ public class TabManager {
      * Removes all the tabs on the activity
      */
     public void removeAll() {
-        ActionBar actionBar = mActivity.getActionBar();
+        ActionBar actionBar = activity.getActionBar();
         if (actionBar != null) {
             actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
             actionBar.removeAllTabs();

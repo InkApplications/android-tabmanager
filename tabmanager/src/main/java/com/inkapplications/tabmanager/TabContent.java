@@ -8,13 +8,12 @@ import android.os.Build;
 import static com.inkapplications.tabmanager.Preconditions.checkNotNull;
 
 /** Class containing all information needed to construct a tab */
-@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class TabContent {
 
-    private Integer mTabIcon;
-    private String mTabTitle;
-    private Class<? extends Fragment> mTabContentFragment;
-    private ActionBar.TabListener mTabListener;
+    private Integer tabIcon;
+    private String tabTitle;
+    private Class<? extends Fragment> tabContentFragment;
+    private ActionBar.TabListener tabListener;
 
     /**
      * Constructor
@@ -74,41 +73,41 @@ public class TabContent {
             Integer tabIcon,
             ActionBar.TabListener tabListener
     ) {
-        mTabTitle = checkNotNull(tabTitle);
-        mTabContentFragment = tabContentFragment;
-        mTabIcon = tabIcon;
-        mTabListener = tabListener;
+        this.tabTitle = checkNotNull(tabTitle);
+        this.tabContentFragment = tabContentFragment;
+        this.tabIcon = tabIcon;
+        this.tabListener = tabListener;
     }
 
     public String getTabTitle() {
-        return mTabTitle;
+        return tabTitle;
     }
 
     public void setTabTitle(String tabTitle) {
-        mTabTitle = checkNotNull(tabTitle);
+        this.tabTitle = checkNotNull(tabTitle);
     }
 
     public Class<? extends Fragment> getTabContentFragment() {
-        return mTabContentFragment;
+        return tabContentFragment;
     }
 
     public void setTabContentFragment(Class<? extends Fragment> tabContentFragment) {
-        mTabContentFragment = checkNotNull(tabContentFragment);
+        this.tabContentFragment = checkNotNull(tabContentFragment);
     }
 
     public Integer getTabIcon() {
-        return mTabIcon;
+        return tabIcon;
     }
 
     public void setTabIcon(Integer tabIcon) {
-        mTabIcon = tabIcon;
+        this.tabIcon = tabIcon;
     }
 
     public ActionBar.TabListener getTabListener() {
-        return mTabListener;
+        return tabListener;
     }
 
     public void setTabListener(DefaultTabListener defaultTabListener) {
-        mTabListener = defaultTabListener;
+        tabListener = defaultTabListener;
     }
 }

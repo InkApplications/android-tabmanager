@@ -1,12 +1,10 @@
-package com.inkapplications.tabmanager;
+package com.inkapplications.tabmanager.support;
 
-import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.os.Build;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 
-import static com.inkapplications.tabmanager.Preconditions.checkNotNull;
+import static com.inkapplications.tabmanager.support.Preconditions.checkNotNull;
 
 /**
  * Abstract class for easily creating tab listeners
