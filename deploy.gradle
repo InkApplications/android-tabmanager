@@ -18,7 +18,7 @@ afterEvaluate { project ->
                         name PROJECT_NAME
                         packaging 'jar'
                         description 'An easier way to add tabs in your application'
-                        artifactId = 'library'
+                        artifactId = ARTIFACT_ID
                         groupId GROUP
                         version VERSION
                         url 'https://github.com/JakeWharton/Android-ViewPagerIndicator'

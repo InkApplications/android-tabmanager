@@ -1,5 +1,6 @@
 ext {
     PROJECT_NAME = "tabmanager"
+    ARTIFACT_ID = "tabmanager"
 }
 
 apply plugin: 'android-library'
