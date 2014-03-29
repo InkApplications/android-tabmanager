@@ -21,12 +21,12 @@ afterEvaluate { project ->
                         artifactId = ARTIFACT_ID
                         groupId GROUP
                         version VERSION
-                        url 'https://github.com/JakeWharton/Android-ViewPagerIndicator'
+                        url 'https://github.com/InkApplications/android-tabmanager'
 
                         scm {
-                            url 'scm:http://github.com/JakeWharton/Android-ViewPagerIndicator'
-                            connection 'scm:git:git://github.com/JakeWharton/Android-ViewPagerIndicator.git'
-                            developerConnection 'scm:git:git@github.com:JakeWharton/Android-ViewPagerIndicator.git'
+                            url 'scm:https://github.com/InkApplications/android-tabmanager'
+                            connection 'scm:git@github.com:InkApplications/android-tabmanager.git'
+                            developerConnection 'scm:git@github.com:InkApplications/android-tabmanager.git'
                         }
 
                         licenses {
